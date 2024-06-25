@@ -5,11 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ShortUrlDTO {
-    private String originalURL;
-    private String shortURL;
+public class ErrorDTO {
+    private String message;
+    private Timestamp timestamp;
 }

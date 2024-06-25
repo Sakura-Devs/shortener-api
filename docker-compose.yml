@@ -2,9 +2,19 @@ version: '3.8'
 
 services:
   api:
-    build:
-      context: .
+    image: sakura/shortener-api
     container_name: ShortenerApi
     ports:
       - "8080:8080"
     restart: always
+    environment:
+      - MONGODB_URI
+    networks:
+      - vhost
+      - mongo
+
+networks:
+    vhost:
+      external: true
+    mongo:
+      external: true
